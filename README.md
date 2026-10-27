@@ -1,70 +1,66 @@
-# web-profil-saad
-# Website Profil Pribadi
+# Panduan Instalasi dan Menjalankan Website Profil Pribadi
 
-## Deskripsi Project
+## A. Mengunduh Project dari GitHub
 
-Website ini dibuat sebagai tugas mata kuliah Pemrograman Web untuk menerapkan pembelajaran pengembangan website menggunakan HTML, CSS, Bootstrap, PHP, dan MySQL.
+1. Buka repository project melalui GitHub.
+2. Klik tombol **Code**, kemudian pilih **Download ZIP**.
+3. Ekstrak file ZIP yang telah diunduh.
+4. Pastikan folder project berisi file `index.php`, `proses_kontak.php`, `project1.html`, `project2.html`, `project3.html`, `kode.sql`, `package.json`, `package-lock.json`, serta folder `foto` dan `foto-project`.
+5. Folder `node_modules` memang tidak tersedia karena dependency harus diinstal pada komputer masing-masing.
 
-## Teknologi yang Digunakan
+## B. Persiapan Aplikasi
 
-- HTML: Membuat struktur halaman website.
-- CSS: Mengatur tampilan dan desain website.
-- Bootstrap: Membantu membuat tampilan yang responsif.
-- PHP: Memproses data dari formulir kontak.
-- Laragon: Menjalankan web server lokal.
-- MySQL: Menyimpan data formulir kontak.
-- DBeaver: Membantu membuat dan mengelola database MySQL.
+6. Pastikan komputer sudah memiliki aplikasi berikut:
+   - Visual Studio Code sebagai kode editor.
+   - Laragon atau XAMPP sebagai web server.
+   - Node.js dan npm untuk instalasi dependency.
+   - MySQL/MariaDB sebagai database.
+   - Browser untuk menjalankan website.
+7. Buka terminal atau Command Prompt, kemudian periksa instalasi Node.js dan npm menggunakan perintah:
 
-## Fitur Website
+   `node -v`
 
-1. Halaman Home
-2. Halaman Profil
-3. Halaman Portofolio
-4. Sosial Media
-5. Formulir Kontak yang terhubung ke database MySQL
+   `npm -v`
 
-## Langkah-Langkah Menjalankan Website
+8. Jika kedua perintah menampilkan nomor versi, berarti Node.js dan npm sudah terinstal.
 
-### 1. Menyiapkan Project
+## C. Instalasi Dependency
 
-Download atau clone repository GitHub, kemudian letakkan folder project di direktori:
+9. Buka folder project `UTS-PROJET` menggunakan Visual Studio Code.
+10. Buka terminal melalui menu **Terminal → New Terminal**.
+11. Pastikan terminal berada pada direktori utama project yang memiliki file `package.json`.
+12. Jalankan perintah berikut:
 
-`C:\laragon\www\web_profile`
+    `npm install`
 
-### 2. Menjalankan Laragon
+13. Tunggu hingga proses instalasi selesai.
+14. Setelah instalasi berhasil, folder `node_modules` akan terbentuk secara otomatis dan berisi dependency yang dibutuhkan berdasarkan konfigurasi `package.json`.
+15. Folder `node_modules` tidak perlu diunggah kembali ke GitHub.
 
-- Buka aplikasi Laragon.
-- Klik tombol Start All.
-- Pastikan web server dan database MySQL sudah berjalan.
+## D. Konfigurasi Web Server dan Database
 
-### 3. Menyiapkan Database MySQL
+16. Pindahkan folder project ke direktori `C:\laragon\www` jika menggunakan Laragon atau `C:\xampp\htdocs` jika menggunakan XAMPP.
+17. Jalankan aplikasi Laragon atau XAMPP.
+18. Aktifkan layanan **Apache dan MySQL/MariaDB**.
+19. Buka phpMyAdmin atau aplikasi pengelola database lainnya.
+20. Buat database dengan nama `web_profile`, kemudian impor file `kode.sql` apabila berisi struktur database project.
+21. Pastikan konfigurasi koneksi database pada file `proses_kontak.php` sesuai dengan pengaturan database pada komputer masing-masing.
 
-- Buka aplikasi DBeaver.
-- Buat koneksi ke database MySQL yang dijalankan melalui Laragon.
-- Buat database bernama `web_profile`.
-- Buat tabel `kontak` dengan kolom `id`, `nama`, `email`, dan `pesan`.
-- Simpan perubahan database.
+## E. Menjalankan Website
 
-### 4. Menghubungkan PHP dengan MySQL
+22. Buka browser seperti Google Chrome atau Microsoft Edge.
+23. Masukkan alamat berikut pada kolom URL:
 
-- Buka file `koneksi.php` atau file PHP yang menangani formulir kontak.
-- Sesuaikan hostname, username, password, dan nama database dengan konfigurasi MySQL pada Laragon.
-- Pastikan koneksi berhasil.
+    `http://localhost/UTS-PROJET/`
 
-### 5. Menjalankan Website
+24. Tekan **Enter** untuk membuka website.
+25. Website akan menampilkan halaman utama melalui file `index.php`.
+26. Lakukan pengujian pada halaman profil, portofolio, detail project, navigasi, dan formulir kontak untuk memastikan seluruh fitur berjalan dengan baik.
 
-Buka browser dan akses alamat:
+## Catatan Penting
 
-`http://localhost/web_profile/`
-
-### 6. Menguji Formulir Kontak
-
-- Buka halaman Kontak.
-- Isi nama, email, dan pesan.
-- Klik tombol Kirim.
-- Buka DBeaver dan periksa tabel `kontak`.
-- Pastikan data berhasil tersimpan ke database MySQL.
-
-## Catatan
-
-Website dijalankan melalui server lokal Laragon. Untuk mengakses website secara online dengan fitur PHP dan MySQL, diperlukan hosting yang mendukung PHP dan database MySQL.
+- Folder `node_modules` tidak disertakan dalam repository GitHub karena berukuran besar dan dapat dibuat kembali melalui `npm install`.
+- Setiap pengguna perlu menginstal Node.js dan menjalankan `npm install` pada komputer masing-masing apabila project menggunakan dependency npm.
+- File `package.json` dan `package-lock.json` harus tetap disertakan dalam repository.
+- Website menggunakan PHP dan MySQL/MariaDB sehingga membutuhkan web server untuk menjalankan fitur backend.
+- GitHub digunakan untuk menyimpan dan membagikan source code, sedangkan website dijalankan melalui server lokal pada komputer masing-masing.
