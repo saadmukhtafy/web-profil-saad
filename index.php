@@ -75,7 +75,7 @@
                         </div>
 
                         <div class="col-md-6 text-center">
-                        <img src="foto/WhatsApp Image 2026-10-22 at 18.29.04.jpeg"
+                        <img src="foto/fotoai.png"
                             class="img-fluid rounded-4"
                             alt="Foto Profile"
                             style="height: 600px; width: auto; object-fit: cover;">
